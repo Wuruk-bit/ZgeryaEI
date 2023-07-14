@@ -8,6 +8,10 @@ target/
 .mvn/
 mvnw
 
+### DB ###
+*.mv.db
+
+
 ### STS ###
 .apt_generated
 .classpath
