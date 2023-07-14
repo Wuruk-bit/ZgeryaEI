@@ -8,10 +8,13 @@ target/
 .mvn/
 mvnw
 
+<<<<<<< practical_task_3
 ### DB ###
 *.mv.db
 
 
+=======
+>>>>>>> main
 ### STS ###
 .apt_generated
 .classpath
