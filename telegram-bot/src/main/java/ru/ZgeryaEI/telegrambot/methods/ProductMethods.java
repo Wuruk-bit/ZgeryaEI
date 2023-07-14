@@ -14,17 +14,21 @@ import java.util.List;
 public class ProductMethods {
     @Autowired
     private ProductRepository productRepository;
+    public Product createProduct(String name, String description, Double price, Category category) {
+        Product product = new Product();
+        product.setCategory(category);
+        product.setName(name);
+        product.setDescription(description);
+        product.setPrice(price);
+        return productRepository.save(product);
+    }
 
     public Product save(Product product) {
         return productRepository.save(product);
     }
+
     public void saveAll(List<Product> products) {
         productRepository.saveAll(products);
-    }
-
-
-    public Product findById(Long id) {
-        return productRepository.findById(id).get();
     }
 
     public List<Product> findAll() {
@@ -38,18 +42,12 @@ public class ProductMethods {
     public void deleteById(Long id) {
         productRepository.deleteById(id);
     }
+    public Product findById(Long id) {
+        return productRepository.findById(id).get();
+    }
 
     public List<Product> findByCategory(Category category) {
         return productRepository.findByCategory(category);
-    }
-
-    public Product createProduct(String name, String description, Double price, Category category) {
-        Product product = new Product();
-        product.setCategory(category);
-        product.setName(name);
-        product.setDescription(description);
-        product.setPrice(price);
-        return productRepository.save(product);
     }
 
 }
